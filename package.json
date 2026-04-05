@@ -3,23 +3,19 @@
   "version": "0.2.0",
   "private": true,
   "scripts": {
-    "build": "tsc",
-    "dev": "vercel dev",
-    "deploy": "vercel --prod",
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
     "test:watch": "vitest",
     "db:migrate": "node scripts/migrate.mjs"
   },
   "dependencies": {
-    "@vercel/postgres": "^0.10.0",
+    "@neondatabase/serverless": "^0.10.0",
     "pg": "^8.13.0"
   },
   "devDependencies": {
     "@types/node": "^20.0.0",
     "@vercel/node": "^4.0.0",
     "typescript": "^5.7.0",
-    "vercel": "^39.0.0",
     "vitest": "3.2.x"
   }
 }

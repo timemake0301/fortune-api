@@ -4,7 +4,7 @@ import { ApiError } from './utils';
 
 type HttpMethod = 'GET' | 'POST';
 
-type HandlerFn = (req: VercelRequest, res: VercelResponse) => Promise<void>;
+type HandlerFn = (req: VercelRequest, res: VercelResponse) => Promise<void | VercelResponse>;
 
 /**
  * Vercel Serverless Function のエントリポイントを生成する。

@@ -1,0 +1,29 @@
+name = "fortune-worker"
+main = "src/index.ts"
+compatibility_date = "2025-12-15"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "fortune-db"
+database_id = "5a34acaf-33f1-428a-81c8-d6c22b11a580"
+
+# Phase 3 で有効化: 長時間の占い生成を非同期処理
+# [[queues.producers]]
+# binding = "FORTUNE_QUEUE"
+# queue = "fortune-generation"
+#
+# [[queues.consumers]]
+# queue = "fortune-generation"
+# max_batch_size = 1
+# max_retries = 3
+
+[vars]
+# テスト中のみ * に設定。本番前に https://www.mkbfortune.com に戻すこと
+ALLOWED_ORIGIN = "*"
+LP_URL = "https://www.mkbfortune.com"
+# Phase 8: SBペイメントサービス（共用試験環境 MID 30132, SID 101）
+SBPS_MERCHANT_ID = "30132"
+SBPS_SERVICE_ID = "101"
+SBPS_API_URL = "https://stbfep.sps-system.com/f01/FepBuyInfoReceive.do"
+SBPS_RETURN_URL = "https://fortune-worker.fortune-worker.workers.dev/api/sbps/return"
+SBPS_PAGECON_URL = "https://fortune-worker.fortune-worker.workers.dev/api/sbps/pagecon"

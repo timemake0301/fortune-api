@@ -82,7 +82,7 @@ export async function buildPurchaseRequestParams(
     last_charge_month: '',
     camp_type: '',
     terminal_type: '0',
-    success_url: returnUrl + '?result=ok',
+    success_url: returnUrl + '?result=ok&order_id=' + orderId,
     cancel_url: returnUrl + '?result=cancel',
     error_url: returnUrl + '?result=error',
     pagecon_url: pageconUrl,
